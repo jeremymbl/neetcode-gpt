@@ -17,6 +17,8 @@ class Solution:
         if activation == "sigmoid":
             x = 1 / (1 + np.exp(-x))
             return round(x, 5)
-        if activation == "relu":
+        elif activation == "relu":
             x = np.maximum(0, x)
+            return round(x, 5)
+        else:
             return round(x, 5)
