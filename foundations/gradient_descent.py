@@ -4,14 +4,7 @@ class Solution:
         # Derivative:         f'(x) = 2x
         # Update rule:        x = x - learning_rate * f'(x)
         # Round final answer to 5 decimal places
-
-        def df(x):
-            return 2*x
-        
         x = init
-
         for _ in range(iterations):
-            x = x - learning_rate*2*x
-
+            x = x - 2*learning_rate*x
         return round(x, 5)
-
