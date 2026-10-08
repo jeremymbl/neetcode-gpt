@@ -9,5 +9,7 @@ class Solution:
         # Hint: subtract max(z) for numerical stability before computing exp
         # return np.round(your_answer, 4)
         max_z = np.max(z)
-        z = np.exp(z-max_z) / sum(np.exp(z-max_z))
-        return np.round(z, 4)
+        denominateur = np.sum(np.exp(z- max_z))
+        res = (np.exp(z - max_z)) / (denominateur)
+        return np.round(res, 4)
+
