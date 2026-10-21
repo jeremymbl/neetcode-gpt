@@ -23,7 +23,7 @@ class Solution:
             # loss
             MSE = (1/n) * np.sum((y_hat - y)**2)
             # calculate gradients
-            dL_dw = (2/n) * np.transpose(X) @ (y_hat - y)
+            dL_dw = (2/n) * X.T @ (y_hat - y)
             dL_db = (2/n) * np.sum(y_hat - y)
             # update parameters
             w -= lr * dL_dw
