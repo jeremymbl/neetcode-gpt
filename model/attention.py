@@ -33,7 +33,7 @@ class SingleHeadAttention(nn.Module):
         K = self.W_K(embedded)
         Q = self.W_Q(embedded)
         V = self.W_V(embedded)
-        scores = (Q @ K.transpose(-2, -1)) / torch.sqrt(torch.tensor(self.attention_dim))
+        scores = (Q @ K.transpose(-2, -1)) / (self.attention_dim ** 0.5)
 
         context_dim = embedded.shape[1]
         mask = torch.tril(torch.ones(context_dim, context_dim))
